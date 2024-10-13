@@ -6,6 +6,7 @@ and saves it to an html file.
 import requests
 import sys
 from urllib.parse import urlparse
+from bs4 import BeautifulSoup
 
 # Check that the URL is provided as a command line argument
 if len(sys.argv) != 2:
@@ -33,10 +34,15 @@ response = requests.get(url) #Send a GET request to the website
 if response.status_code == 200: #Check if the request was successful
 
     html_content = response.text #Get the HTML content
+
+    soup = BeautifulSoup(html_content, 'html.parser') # make the HTML content organized
+    clean_html = soup.prettify()
+
+
     file_name = f"{domain}.html" #Create the filename using the domain name
     
     with open(file_name, 'w', encoding='utf-8') as file: #Write the HTML content to the file
-        file.write(html_content)
+        file.write(clean_html)
     print(f"HTML content has been saved to '{file_name}'")
 else:
     print(f"Failed to retrieve the website. Status code: {response.status_code}")
