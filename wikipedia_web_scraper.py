@@ -1,5 +1,5 @@
 '''
-Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from Wikipedia sites
+Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from Wikipedia sites.
 '''
 import os
 import sys
