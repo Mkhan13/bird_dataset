@@ -39,7 +39,7 @@ def download_bird_images(url):
                 
                 existing_images = len([name for name in os.listdir(folder) if name.startswith(bird)]) # Count how many images are already in the folder
                 
-                img_url = urljoin(url, img_url) # Ensure the image URL is absolute
+                img_url = urljoin(url, img_url) # Join the base URL with the image URL to form a complete URL
                 
                 img_response = requests.get(img_url) # Fetch the image
                 if img_response.status_code == 200:
