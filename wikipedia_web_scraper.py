@@ -45,11 +45,11 @@ def download_bird_images(url):
             if bird in img_url.lower() or bird in alt_text:  #Check if bird type is in URL or alt text
                 create_folder(folder)
 
-                existing_images = len([name for name in os.listdir(folder) if name.startswith(bird)])  #Count how many images are already in the folder
+                existing_images = len([name for name in os.listdir(folder)])  #Count how many images are already in the folder
                 img_response = requests.get(img_url)  #Download the image
 
                 if img_response.status_code == 200:
-                    img_name = f"{bird}_{existing_images + 1}.jpg"
+                    img_name = f"{existing_images + 1}.jpg"
                     img_path = os.path.join(folder, img_name)
                     with open(img_path, 'wb') as f:
                         f.write(img_response.content) #Save the image to the correct folder

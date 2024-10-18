@@ -1,6 +1,3 @@
-'''
-Script to rename and renumber the images in each bird folder
-'''
 import os
 
 folders = {
@@ -10,32 +7,37 @@ folders = {
     './cowbird': 'cowbird'
 }
 
-def get_next_available_name(folder_path, bird, count):
-    '''Function to find the next available file name by checking for conflicts'''
-    new_name = f"{bird}_{count}.jpg"
-    new_file = os.path.join(folder_path, new_name)
-    
-    while os.path.exists(new_file):
-        count += 1  #Increment count until a non-conflicting name is found
-        new_name = f"{bird}_{count}.jpg"
-        new_file = os.path.join(folder_path, new_name)
-    return new_name
-
 def rename_files_in_folder(folder_path, bird):
-    files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]  #Get a list of all files in the directory
-    files.sort()
-    
-    start_count = 1 #Start counting from 1 for each folder
+    #Rename files to a simple sequence
+    existing_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    existing_files.sort()
 
-    for count, filename in enumerate(files, start=start_count):
-        new_name = get_next_available_name(folder_path, bird, count)  #Create new file name
+    for count, filename in enumerate(existing_files, start=1):
+        #Create a new name based on the count
+        new_name = f"image_{count}.jpg" #If encountering renaming issues, remove "image_" and run script again
 
-        #Get the full path of the current file and the new file
-        old_file = os.path.join(folder_path, filename.strip())  #Strip spaces from the old file name
+        #Get the full paths for old and new file names
+        old_file = os.path.join(folder_path, filename.strip())
         new_file = os.path.join(folder_path, new_name)
-        
-        os.rename(old_file, new_file)  #Rename the file
+
+        os.rename(old_file, new_file) #Rename the files
         print(f"Renamed '{filename}' to '{new_name}'")
+
+    #Rename the numbered files to the bird name format
+    numbered_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
+    numbered_files.sort()
+
+    for count, filename in enumerate(numbered_files, start=1):
+        #Create a new name with the corresponding bird
+        bird_new_name = f"{bird}_{count}.jpg"
+
+        #Get the full paths for old and new file names
+        old_file = os.path.join(folder_path, filename.strip())
+        new_file = os.path.join(folder_path, bird_new_name)
+
+        #Rename the file to include the bird name
+        os.rename(old_file, new_file)
+        print(f"Renamed '{filename}' to '{bird_new_name}'")
 
 #Loop through each folder and rename files
 for folder_path, bird in folders.items():
