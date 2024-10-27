@@ -2,7 +2,6 @@
 Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from Wikipedia sites.
 '''
 import os
-import sys
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin

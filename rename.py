@@ -6,15 +6,14 @@ folders = {
     './blackbird': 'blackbird',
     './cowbird': 'cowbird'
 }
-
-def rename_files_in_folder(folder_path, bird):
+def rename_to_numbers(folder_path):
     #Rename files to a simple sequence
     existing_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
     existing_files.sort()
 
     for count, filename in enumerate(existing_files, start=1):
         #Create a new name based on the count
-        new_name = f"image_{count}.jpg" #If encountering renaming issues, remove "image_" and run script again
+        new_name = f"{count}.jpg" #If encountering renaming issues, remove "image_" and run script again
 
         #Get the full paths for old and new file names
         old_file = os.path.join(folder_path, filename.strip())
@@ -23,6 +22,7 @@ def rename_files_in_folder(folder_path, bird):
         os.rename(old_file, new_file) #Rename the files
         print(f"Renamed '{filename}' to '{new_name}'")
 
+def rename_to_birds(folder_path, bird):
     #Rename the numbered files to the bird name format
     numbered_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
     numbered_files.sort()
@@ -41,4 +41,5 @@ def rename_files_in_folder(folder_path, bird):
 
 #Loop through each folder and rename files
 for folder_path, bird in folders.items():
-    rename_files_in_folder(folder_path, bird)
+    #rename_to_numbers(folder_path)
+    rename_to_birds(folder_path, bird)
