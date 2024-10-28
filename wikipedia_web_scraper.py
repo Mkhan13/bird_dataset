@@ -19,7 +19,7 @@ def create_folder(folder_name):
         os.makedirs(folder_name)
 
 def get_full_img_url(img_url):
-    '''Ensure the image URL is a full URL'''
+    '''Constructs the full URL of an image by joining a relative URL with the base URL'''
     if img_url.startswith('//'):
         return 'https:' + img_url
     elif img_url.startswith('/'):
@@ -27,7 +27,7 @@ def get_full_img_url(img_url):
     return img_url
 
 def download_bird_images(url):
-    '''Function to download bird images from a URL and categorize them'''
+    '''Function to download bird images from a URL and save them to the specified folder'''
     response = requests.get(url) #Send an HTTP request to the webpage
     soup = BeautifulSoup(response.text, 'html.parser')
 
