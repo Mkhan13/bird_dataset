@@ -1,3 +1,6 @@
+'''
+Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from On The Wing Photography
+'''
 import os
 import asyncio
 from playwright.async_api import async_playwright
