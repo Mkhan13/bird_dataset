@@ -1,1 +1,9 @@
-BIRD URLS GO HERE
+https://www.audubon.org/field-guide/bird/european-starling
+https://www.audubon.org/field-guide/bird/common-grackle
+https://www.audubon.org/field-guide/bird/great-tailed-grackle
+https://www.audubon.org/field-guide/bird/brewers-blackbird
+https://www.audubon.org/field-guide/bird/red-winged-blackbird
+https://www.audubon.org/field-guide/bird/rusty-blackbird
+https://www.audubon.org/field-guide/bird/bronzed-cowbird
+https://www.audubon.org/field-guide/bird/brown-headed-cowbird
+https://www.audubon.org/field-guide/bird/shiny-cowbird
