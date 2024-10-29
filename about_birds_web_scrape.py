@@ -1,5 +1,5 @@
 '''
-Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from On The Wing Photography
+Script to web scrape for images of starlings, grackles, blackbirds, and cowbirds from Cornell Labs All About Birds website
 Note: Images 2-14 will be missing from the count and will raise a "Cannot Connect" or "Cannot Download" error.
 This is expected behavior, they are videos and should be excluded.
 '''
