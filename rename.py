@@ -13,7 +13,7 @@ def rename_to_numbers(folder_path):
 
     for count, filename in enumerate(existing_files, start=1):
         #Create a new name based on the count
-        new_name = f"{count}.jpg" #If encountering renaming issues, remove "image_" and run script again
+        new_name = f"image_{count}.jpg" #If encountering renaming issues, replace with "image_{count}.jpg" and run script again
 
         #Get the full paths for old and new file names
         old_file = os.path.join(folder_path, filename.strip())
