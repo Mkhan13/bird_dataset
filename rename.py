@@ -1,6 +1,6 @@
 '''
 This script iterates through each image in the bird folders and renames them following the image_#.jpg scheme for uniformity.
-Then each image is renamed following the [bird]_#.jpg scheme. The day is to ensure the rename is processed and displayed before moving on to the next name.
+Then each image is renamed following the [bird]_#.jpg scheme. The day is to ensure the rename is processed and displayed before moving on to the next file.
 '''
 import os
 import time
@@ -12,7 +12,9 @@ folders = {
     './cowbird': 'cowbird'
 }
 def rename_to_numbers(folder_path):
-    #Rename files to a simple sequence
+    '''
+    Function to rename files to a simple sequence
+    '''
     existing_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
     for count, filename in enumerate(existing_files, start=1):
@@ -28,7 +30,9 @@ def rename_to_numbers(folder_path):
         print(f"Renamed '{filename}' to '{new_name}'")
 
 def rename_to_birds(folder_path, bird):
-    #Rename the numbered files to the bird name format
+    '''
+    Function to rename the image files to bird name format
+    '''
     numbered_files = [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
 
     for count, filename in enumerate(numbered_files, start=1):
