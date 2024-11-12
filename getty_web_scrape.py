@@ -26,7 +26,7 @@ def get_full_img_url(img_url, base_url):
 async def download_image(session, img_url, folder, existing_images):
     '''Function to download bird images from a URL and save them to the specified folder'''
     try:
-        async with session.get(img_url) as response:  #Make a request to download the image
+        async with session.get(img_url) as response: #Make a request to download the image
             if response.status == 200:
                 img_name = f"{existing_images + 1}.jpg" #Number the images in order
                 img_path = os.path.join(folder, img_name)
@@ -62,7 +62,7 @@ async def download_bird_images(url):
                                 full_img_url = get_full_img_url(src, url)
                                 await download_image(session, full_img_url, folder, existing_images)
                                 existing_images += 1
-                                await asyncio.sleep(1)  #Add a delay between downloads
+                                await asyncio.sleep(1) #Add a delay between downloads
                         except Exception as e:
                             print(f"Error processing image: {e}")
         
