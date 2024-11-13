@@ -25,12 +25,12 @@ def get_full_img_url(img_url, base_url):
     '''Constructs the full URL of an image by joining a relative URL with the base URL'''
     return urljoin(base_url, img_url)
 
-async def download_image(session, img_url, folder, index):
+async def download_image(session, img_url, folder, existing_images):
     '''Function to download bird images from a URL and save them to the specified folder'''
     try:
         async with session.get(img_url) as response:  #Make a request to download the image
             if response.status == 200:
-                img_name = f"{index}.jpg" #Number the images in order
+                img_name = f"{existing_images + 1}.jpg" #Number the images in order
                 img_path = os.path.join(folder, img_name)
                 with open(img_path, 'wb') as f:
                     f.write(await response.read())
@@ -53,7 +53,7 @@ async def download_bird_images(url):
             async with aiohttp.ClientSession() as session:
                 for bird, folder in bird_categories.items():
                     create_folder(folder) #Ensure folder for each bird category exists
-                    index = 1
+                    existing_images = len([name for name in os.listdir(folder)])  #Count how many images are already in the folder
                     for img in img_elements:
                         try:
                             #Get the image source (src) and alternative text (alt)
@@ -62,8 +62,8 @@ async def download_bird_images(url):
                             #Check if the bird name appears in the image source or alt attribute
                             if src and (bird in src.lower() or (alt and bird in alt.lower())):
                                 full_img_url = get_full_img_url(src, url)
-                                await download_image(session, full_img_url, folder, index)
-                                index += 1
+                                await download_image(session, full_img_url, folder, existing_images)
+                                existing_images += 1
                                 await asyncio.sleep(1)  #Add a delay between downloads
                         except Exception as e:
                             print(f"Error processing image: {e}")
