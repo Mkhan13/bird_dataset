@@ -2,13 +2,13 @@
 This project contains scripts to web scrape images of specific bird species (e.g., starlings, grackles, blackbirds, cowbirds) from various websites. Each script scrapes bird images from a designated URL and saves them into corresponding folders for each bird species.
 
 ## Features
--**Bird Categories:** This scraper supports the following bird categories by default:  
-*Starling  
-*Grackle  
-*Blackbird  
-*Cowbird  
--**Folder Management:** Images are stored in separate folders for each bird type.  
--**Error Handling:** Logs any issues encountered during image download or processing, such as broken image URLs or failed downloads.  
+- **Bird Categories:** This scraper supports the following bird categories by default:  
+* Starling  
+* Grackle  
+* Blackbird  
+* Cowbird  
+- **Folder Management:** Images are stored in separate folders for each bird type.  
+- **Error Handling:** Logs any issues encountered during image download or processing, such as broken image URLs or failed downloads.  
 
 ## Usage
 1. Paste the desired urls to webscrape in ```urls.txt```
