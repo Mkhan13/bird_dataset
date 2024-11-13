@@ -6,10 +6,10 @@ import os
 import time
 
 folders = {
-    './blackbird': 'blackbird',
-    './cowbird': 'cowbird',
-    './grackle': 'grackle',
-    './starling': 'starling'
+    './web_scrape/blackbird': 'blackbird',
+    './web_scrape/cowbird': 'cowbird',
+    './web_scrape/grackle': 'grackle',
+    './web_scrape/starling': 'starling'
 }
 def rename_to_numbers(folder_path):
     '''
