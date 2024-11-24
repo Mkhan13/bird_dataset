@@ -30,8 +30,20 @@ Optional: Convert desired URL to HTML using ```url_to_html.py``` for easier read
 
   
 ## Ethics Statement
-
+This dataset was developed with careful consideration of ethical standards to ensure responsible collection and use of data. All images included were sourced from publicly accessible platforms. The dataset is intended exclusively for conservation, research, and educational purposes, with a focus on deterring invasive bird species to support native bird populations and ecological balance.
   
 ## Open Source License
 
+Copyright 2024 Mariam Khan  
   
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+  
+    http://www.apache.org/licenses/LICENSE-2.0
+  
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
