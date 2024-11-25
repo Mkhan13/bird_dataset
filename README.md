@@ -1,5 +1,5 @@
 # Bird Image Dataset
-*summary here*  
+This dataset was developed to tackle the ecological issues caused by starlings, an invasive bird species that poses a threat to native birds by taking over food and nesting resources. This dataset offers high-quality labeled images of starlings and similar-looking birds, such as grackles, blackbirds, and cowbirds. The goal of this dataset is to aid in creating AI models for species recognition. These models could be integrated into smart bird feeder systems or conservation tools to help deter invasive species while supporting native birds.
   
 ## Data Included
 This project contains scripts to web scrape images of specific bird species (e.g., starlings, grackles, blackbirds, cowbirds) from various websites. Each script scrapes bird images from a designated URL and saves them into corresponding folders for each bird species.
@@ -9,7 +9,7 @@ The dataset contains images of starlings, grackles, blackbirds, and cowbirds.
 Total Images: #  
 Image Format: jpg images, categorized into subfolders by species  
 
-Link to dataset *here*
+Link to dataset [here](https://www.kaggle.com/datasets/mariamkhan13/starling-grackle-cowbird-and-blackbird-dataset/data)
   
 ## Installation
 1. Install Python 3.7 or higher
