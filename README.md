@@ -6,7 +6,7 @@ This project contains scripts to web scrape images of specific bird species (e.g
 
 **Data Details:**  
 The dataset contains images of starlings, grackles, blackbirds, and cowbirds.  
-Total Images: #  
+Total Images: 564  
 Image Format: jpg images, categorized into subfolders by species  
 
 Link to dataset [here](https://www.kaggle.com/datasets/mariamkhan13/starling-grackle-cowbird-and-blackbird-dataset/data)
