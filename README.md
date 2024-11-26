@@ -27,7 +27,9 @@ Optional: Convert desired URL to HTML using ```url_to_html.py``` for easier read
 
   
 ## Exploratory Data Analysis
+The dataset requires further data collection to increase the number of images for each species, particularly starlings. Although the dataset is intended to focus on starlings, they currently have the fewest images. This is because other bird types include multiple subspecies, which expands the range of sources available for web scraping, whereas there is only one species of starling.
 
+The existing images in the dataset are of high quality: they are well-focused, similar in size, feature a single bird, and the bird is the central focal point of each image. This consistency ensures that the dataset is suitable for machine learning applications because clear and focused images are important for accurate model training.
   
 ## Ethics Statement
 This dataset was developed with careful consideration of ethical standards to ensure responsible collection and use of data. All images included were sourced from publicly accessible platforms. The dataset is intended exclusively for conservation, research, and educational purposes, with a focus on deterring invasive bird species to support native bird populations and ecological balance.
