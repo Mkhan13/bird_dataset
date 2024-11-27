@@ -24,7 +24,7 @@ Link to dataset [here](https://www.kaggle.com/datasets/mariamkhan13/starling-gra
 Optional: Convert desired URL to HTML using ```url_to_html.py``` for easier readability
 
 ## Power Analysis
-
+Using the ANOVA model to perform a power analysis, in order for the data to be statistically significant, there needs to be 277 images of each bird species, for a total of 1108 images. This dataset has a total of 564 images, meaning more data needs to be collected of each species for this dataset to be significant.
   
 ## Exploratory Data Analysis
 The dataset requires further data collection to increase the number of images for each species, particularly starlings. Although the dataset is intended to focus on starlings, they currently have the fewest images. This is because other bird types include multiple subspecies, which expands the range of sources available for web scraping, whereas there is only one species of starling.
